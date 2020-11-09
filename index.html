@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Just Copying Code 11</title>
+  </head>
+  <style>
+    body{
+      background-color:#fed;
+      color:#052;
+      text-align:center;
+    }
+  </style>
+  <body>
+   <script>
+      var date = new Date;
+      date.setTime(date.getTime());
+
+      var seconds = date.getSeconds();
+      var minutes = date.getMinutes();
+      var hour = date.getHours();
+
+      var year = date.getFullYear();
+      var month = date.getMonth();
+      var day = date.getDate();
+      if(year > 2020 || month > 10){
+        document.body.innerHTML = "It's over!!!"
+      }
+      else{
+        var fraction = ((day * 86400) - 86400 + (hour * 3600) + 3600 + (minutes * 60) + seconds) / 2595600;
+      }
+    </script>
+  </body>
+</html>
