@@ -16,23 +16,28 @@
   </style>
   <body>
    <script>
-      var date = new Date;
-      date.setTime(date.getTime());
+     function refreshData()
+      {
+        var date = new Date;
+        date.setTime(date.getTime());
 
-      var seconds = date.getSeconds();
-      var minutes = date.getMinutes();
-      var hour = date.getHours();
+        var seconds = date.getSeconds();
+        var minutes = date.getMinutes();
+        var hour = date.getHours();
 
-      var year = date.getFullYear();
-      var month = date.getMonth();
-      var day = date.getDate();
-      if(year > 2020 || month > 10){
-        document.body.innerHTML = "It's over!!!"
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        if(year > 2020 || month > 10){
+          document.body.innerHTML = "It's over!!!"
+        }
+        else{
+          var fraction = ((day * 86400) - 86400 + (hour * 3600) + 3600 + (minutes * 60) + seconds) / 25956;
+          document.body.innerHTML = fraction + "% is over!"
+        }
+        setTimeout(refreshData, 3000);
       }
-      else{
-        var fraction = ((day * 86400) - 86400 + (hour * 3600) + 3600 + (minutes * 60) + seconds) / 25956;
-        document.body.innerHTML = fraction + "% is over!"
-      }
+      refreshData();
     </script>
   </body>
 </html>
